@@ -1,5 +1,8 @@
 "use client";
-import { motion } from "framer-motion";
+
+import { motion, useAnimation } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { useInView } from "react-intersection-observer";
 
 type Project = {
   title: string;
@@ -42,40 +45,76 @@ const projects: Project[] = [
 ];
 
 export default function Projects() {
+  const controls = useAnimation();
+  const ref = useRef(null);
+  const { ref: inViewRef, inView } = useInView({
+    threshold: 0.2,
+    triggerOnce: false,
+  });
+
+  // Combine refs
+  const setRefs = (node: any) => {
+    ref.current = node;
+    inViewRef(node);
+  };
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        when: "beforeChildren",
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <motion.section
       id="projects"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
+      ref={setRefs}
       className="max-w-5xl mx-auto py-24 px-6 flex flex-col gap-10"
+      variants={containerVariants}
+      initial="hidden"
+      animate={controls}
     >
-      <h2 className="text-3xl font-bold text-foreground text-center sm:text-left">
-        Projects
+      <h2 className="text-4xl font-bold text-center sm:text-left text-foreground mb-4">
+        Selected Projects
       </h2>
 
       <div className="grid gap-8 sm:grid-cols-2">
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: true }}
-            className="block border border-gray-200 dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition duration-300 bg-white dark:bg-[#111]"
+            variants={itemVariants}
+            className="group block border border-gray-200 dark:border-gray-700 rounded-xl p-6 bg-white dark:bg-[#111] hover:shadow-xl hover:border-gray-300 dark:hover:border-gray-600 transition-all duration-300"
           >
-            <h3 className="text-xl font-semibold text-foreground mb-2">
+            <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:underline transition">
               {project.title}
             </h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+            <p className="text-base text-gray-600 dark:text-gray-400 mb-4">
               {project.description}
             </p>
             <div className="flex flex-wrap gap-2">
               {project.tech.map((tech, idx) => (
                 <span
                   key={idx}
-                  className="text-xs bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-2 py-1 rounded"
+                  className="text-xs bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-2 py-1 rounded-full tracking-wide"
                 >
                   {tech}
                 </span>

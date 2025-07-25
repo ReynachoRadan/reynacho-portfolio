@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { FaDownload } from "react-icons/fa";
 
 export default function Hero() {
   return (
@@ -19,11 +20,11 @@ export default function Hero() {
       <a
         href="/CV-Reynacho.pdf"
         download
-        className="inline-block mt-4 px-6 py-2 rounded-full bg-foreground text-background hover:bg-gray-800 dark:hover:bg-gray-200 transition font-medium"
-        aria-label="Download CV"
+        className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-black text-white hover:bg-white hover:text-black border border-black dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white transition duration-300 font-semibold"
       >
-        Download CV
-      </a>
+      <FaDownload />
+  Download CV
+</a>
     </motion.section>
   );
 }

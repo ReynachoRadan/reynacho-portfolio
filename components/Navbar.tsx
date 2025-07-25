@@ -23,13 +23,26 @@ export default function Navbar() {
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center text-sm font-medium text-foreground">
-        <Link href="#hero" className="font-semibold text-lg">
+        {/* Brand */}
+        <Link href="#hero" className="font-bold text-lg tracking-tight">
           Reynacho
         </Link>
+
+        {/* Nav Links */}
         <div className="hidden sm:flex gap-6">
-          <Link href="#about" className="hover:underline">About</Link>
-          <Link href="#projects" className="hover:underline">Projects</Link>
-          <Link href="#contact" className="hover:underline">Contact</Link>
+          {[
+            { href: "#about", label: "About" },
+            { href: "#projects", label: "Projects" },
+            { href: "#contact", label: "Contact" },
+          ].map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="relative transition duration-300 ease-in-out hover:text-black dark:hover:text-white after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 hover:after:w-full after:bg-current after:transition-all after:duration-300"
+            >
+              {item.label}
+            </Link>
+          ))}
         </div>
       </nav>
     </header>

@@ -17,9 +17,15 @@ export default function CustomCursor() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 w-4 h-4 bg-foreground rounded-full z-[9999] pointer-events-none"
-      animate={{ x: position.x - 8, y: position.y - 8 }} // center the dot
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      className="fixed top-0 left-0 w-6 h-6 rounded-full z-[9999] pointer-events-none 
+                 bg-foreground/30 dark:bg-white/20 backdrop-blur-sm mix-blend-difference"
+      animate={{ x: position.x - 12, y: position.y - 12 }}
+      transition={{
+        type: "spring",
+        stiffness: 300,
+        damping: 25,
+        mass: 0.5,
+      }}
     />
   );
 }

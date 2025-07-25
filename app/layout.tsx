@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-// ✅ Import Navbar
+// ✅ Import komponen global
 import Navbar from "@/components/Navbar";
+import CustomCursor from "@/components/CustomCursor"; // ⬅️ Tambahkan ini
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,10 +31,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* ✅ Tampilkan Navbar di semua halaman */}
+        {/* ✅ Global Components */}
+        <CustomCursor /> {/* ⬅️ Tambahkan di sini */}
         <Navbar />
 
-        {/* ✅ Konten halaman */}
+        {/* ✅ Halaman utama */}
         {children}
       </body>
     </html>
