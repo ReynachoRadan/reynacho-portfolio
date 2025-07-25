@@ -37,7 +37,7 @@ export default function About() {
         </h2>
 
         <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed mb-4">
-          I&rsquo;mm <strong>Reynacho A. Radan</strong> — a passionate mobile app developer and UI/UX designer based in Indonesia. I specialize in crafting intuitive user interfaces backed by clean, scalable code.
+          I&rsquo;m <strong>Reynacho A. Radan</strong> — a passionate mobile app developer and UI/UX designer based in Indonesia. I specialize in crafting intuitive user interfaces backed by clean, scalable code.
         </p>
 
         <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed mb-4">
@@ -45,7 +45,7 @@ export default function About() {
         </p>
 
         <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed mb-6">
-          I believe in continuous growth, collaborative work, and purposeful design. Whether it's designing from scratch or refining existing products, I aim to bring ideas to life with impact and clarity.
+          I believe in continuous growth, collaborative work, and purposeful design. Whether it&rsquo;s designing from scratch or refining existing products, I aim to bring ideas to life with impact and clarity.
         </p>
 
         {/* SOCIAL ICONS */}
