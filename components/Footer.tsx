@@ -10,7 +10,7 @@ export default function Footer() {
       viewport={{ once: true }}
       className="text-center py-8 text-sm text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700 mt-24"
     >
-      © 2025 Reynacho Azarel — Built with Next.js & Tailwind CSS
+      © 2025 Reynacho Azarel — Built with ☕ & ❤️
     </motion.footer>
   );
 }
