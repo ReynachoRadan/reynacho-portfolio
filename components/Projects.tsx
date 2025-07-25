@@ -46,14 +46,14 @@ const projects: Project[] = [
 
 export default function Projects() {
   const controls = useAnimation();
-  const ref = useRef(null);
+  const ref = useRef<HTMLElement | null>(null);
   const { ref: inViewRef, inView } = useInView({
     threshold: 0.2,
     triggerOnce: false,
   });
 
-  // Combine refs
-  const setRefs = (node: any) => {
+  // Combine refs with correct type
+  const setRefs = (node: HTMLElement | null) => {
     ref.current = node;
     inViewRef(node);
   };
