@@ -37,7 +37,7 @@ export default function About() {
         </h2>
 
         <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed mb-4">
-          I’m <strong>Reynacho A. Radan</strong> — a passionate mobile app developer and UI/UX designer based in Indonesia. I specialize in crafting intuitive user interfaces backed by clean, scalable code.
+          I&rsquo;mm <strong>Reynacho A. Radan</strong> — a passionate mobile app developer and UI/UX designer based in Indonesia. I specialize in crafting intuitive user interfaces backed by clean, scalable code.
         </p>
 
         <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed mb-4">
