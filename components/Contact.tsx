@@ -5,57 +5,50 @@ export default function Contact() {
   return (
     <motion.section
       id="contact"
-      className="max-w-4xl mx-auto px-6 py-24 text-center flex flex-col items-center gap-6"
+      className="max-w-4xl mx-auto px-6 py-24"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: false, amount: 0.3 }} // <-- animasi muncul tiap kali visible
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <h2 className="text-3xl font-bold text-foreground">Get in Touch</h2>
+      <motion.div
+        whileHover={{ scale: 1.02 }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
+        className="rounded-3xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-[#111]/80 backdrop-blur-md shadow-md hover:shadow-xl transition-shadow duration-300 p-10 text-center flex flex-col items-center gap-6"
+      >
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-3xl font-bold text-foreground"
+        >
+          Let’s work together
+        </motion.h2>
 
-      <p className="text-gray-600 dark:text-gray-400 max-w-xl text-base leading-relaxed">
-        Feel free to reach out for collaborations, freelance work, or just to say hi!
-      </p>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-gray-600 dark:text-gray-400 max-w-xl text-base leading-relaxed"
+        >
+          I’m currently open for new projects, collaborations, or just a friendly hello.
+          Feel free to reach out.
+        </motion.p>
 
-      <div className="flex flex-wrap justify-center items-center gap-4 text-sm sm:text-base font-medium mt-4 text-foreground">
-        {[
-          {
-            label: "reynacho.design@gmail.com",
-            href: "mailto:reynacho.design@gmail.com",
-          },
-          {
-            label: "Telegram",
-            href: "https://t.me/reynachoAradan",
-          },
-          {
-            label: "LinkedIn",
-            href: "https://www.linkedin.com/in/reynachoradan/",
-          },
-          {
-            label: "Instagram",
-            href: "https://instagram.com/reynacho._",
-          },
-        ].map((link, idx, arr) => (
-          <div key={idx} className="flex items-center gap-2">
-            <a
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative group"
-            >
-              <span className="transition-colors group-hover:text-black dark:group-hover:text-white">
-                {link.label}
-              </span>
-              <span className="absolute left-0 -bottom-1 w-0 h-[1.5px] bg-foreground group-hover:w-full transition-all duration-300"></span>
-            </a>
-
-            {/* Separator dot, kecuali elemen terakhir */}
-            {idx < arr.length - 1 && (
-              <span className="text-gray-400 dark:text-gray-600">·</span>
-            )}
-          </div>
-        ))}
-      </div>
+        <motion.a
+          href="mailto:reynacho.design@gmail.com"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="relative font-medium text-sm sm:text-base text-black dark:text-white group transition-colors duration-300"
+        >
+          <span className="relative z-10">Contact Me</span>
+          <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-current group-hover:w-full group-hover:left-0 transition-all duration-300 origin-left" />
+        </motion.a>
+      </motion.div>
     </motion.section>
   );
 }

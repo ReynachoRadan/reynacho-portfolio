@@ -16,19 +16,25 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all ${
-        scrolled
+      className={`
+        transition-all py-4
+        ${scrolled
           ? "bg-white/80 dark:bg-[#111]/80 backdrop-blur-md shadow-sm"
           : "bg-transparent"
-      }`}
+        }
+      `}
     >
-      <nav className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center text-sm font-medium text-foreground">
-        {/* Brand */}
-        <Link href="#hero" className="font-bold text-lg tracking-tight">
-          Reynacho
+      <nav className="max-w-6xl mx-auto px-6 flex justify-between items-center text-sm font-medium text-foreground">
+        {/* Brand Logo */}
+        <Link href="#hero" className="flex items-center">
+          <img
+            src="/images/logo_navbar.png"
+            alt="Logo"
+            className="w-10 h-10 object-contain"
+          />
         </Link>
 
-        {/* Nav Links */}
+        {/* Navigation Links */}
         <div className="hidden sm:flex gap-6">
           {[
             { href: "#about", label: "About" },

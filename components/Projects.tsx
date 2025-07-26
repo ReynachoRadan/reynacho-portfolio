@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, useAnimation, AnimatePresence } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import clsx from "clsx";
 
 type Project = {
@@ -21,43 +21,37 @@ type Certification = {
 const projects: Project[] = [
   {
     title: "Neo Cafe",
-    description:
-      "Digital menu app for modern cafes. Designed using Figma as a high-fidelity UI project.",
+    description: "Digital menu app for modern cafes. Designed using Figma as a high-fidelity UI project.",
     tech: ["Figma", "UI/UX Design"],
     image: "/images/projects/neo-cafe.png",
   },
   {
     title: "Mivote",
-    description:
-      "UI/UX concept for a digital voting app that prioritizes accessibility and security.",
+    description: "UI/UX concept for a digital voting app that prioritizes accessibility and security.",
     tech: ["Figma", "Mobile UI Design"],
     image: "/images/projects/mivote.png",
   },
   {
     title: "Sehati",
-    description:
-      "Health monitoring app for children with clean and intuitive UI.",
+    description: "Health monitoring app for children with clean and intuitive UI.",
     tech: ["Figma", "Health App UI"],
     image: "/images/projects/sehati.png",
   },
   {
     title: "Selisir",
-    description:
-      "Travel app for recommending East Java beaches with map-based interface.",
+    description: "Travel app for recommending East Java beaches with map-based interface.",
     tech: ["Figma", "Travel App"],
     image: "/images/projects/selisir.png",
   },
   {
     title: "Dapur Ibuk",
-    description:
-      "Traditional food ordering app featuring clean visual menus and warm branding.",
+    description: "Traditional food ordering app featuring clean visual menus and warm branding.",
     tech: ["Figma", "Restaurant UI"],
     image: "/images/projects/dapur-ibuk.png",
   },
   {
     title: "Revela",
-    description:
-      "Movie streaming app with integrated chat feature and modern interface.",
+    description: "Movie streaming app with integrated chat feature and modern interface.",
     tech: ["Figma", "Entertainment UI", "Prototype"],
     image: "/images/projects/revela.png",
     link: "https://www.figma.com/proto/rygMNpGVWGaTgf0cLUNkdc/Revela---Reynacho-A.-Radan?page-id=124%3A985&node-id=325-2226",
@@ -80,7 +74,8 @@ export default function Projects() {
       id="projects"
       className="max-w-5xl mx-auto py-24 px-6 flex flex-col gap-10"
       initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <h2 className="text-4xl font-bold text-center sm:text-left text-foreground mb-4">
@@ -113,7 +108,7 @@ export default function Projects() {
         </button>
       </div>
 
-      {/* Content with Animation */}
+      {/* Content */}
       <AnimatePresence mode="wait">
         {activeTab === "projects" ? (
           <motion.div
@@ -122,7 +117,7 @@ export default function Projects() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
+            transition={{ duration: 0.5 }}
           >
             {projects.map((project, index) => (
               <motion.div
@@ -130,7 +125,7 @@ export default function Projects() {
                 className="group block border border-gray-200 dark:border-gray-700 rounded-xl p-4 bg-white dark:bg-[#111] hover:shadow-xl hover:border-gray-300 dark:hover:border-gray-600 transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 {project.image && (
@@ -193,16 +188,23 @@ export default function Projects() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
+            transition={{ duration: 0.5 }}
           >
             {certifications.map((cert, index) => (
               <motion.div
                 key={index}
-                className="border border-gray-200 dark:border-gray-700 rounded-xl p-4 bg-white dark:bg-[#111] hover:shadow-md transition-all"
+                className="border border-gray-200 dark:border-gray-700 rounded-xl p-4 bg-white dark:bg-[#111] transition-all"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: false, amount: 0.2 }}
+                whileHover={{ scale: 1.03, boxShadow: "0px 8px 20px rgba(0,0,0,0.08)" }}
+                transition={{
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 20,
+                  duration: 0.4,
+                  delay: index * 0.1,
+                }}
               >
                 <h4 className="text-lg font-semibold text-foreground">
                   {cert.title}
