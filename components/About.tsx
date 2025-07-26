@@ -2,12 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import {
-  FaLinkedin,
-  FaTwitter,
-  FaInstagram,
-  FaGithub,
-} from "react-icons/fa";
+import { FaLinkedin, FaTwitter, FaInstagram, FaGithub } from "react-icons/fa";
 
 export default function About() {
   return (
@@ -47,7 +42,9 @@ export default function About() {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="text-gray-600 dark:text-gray-400 text-base leading-relaxed mb-4"
         >
-          I&rsquo;m <strong>Reynacho A. Radan</strong> — a passionate mobile app developer and UI/UX designer based in Indonesia. I specialize in crafting intuitive user interfaces backed by clean, scalable code.
+          I&rsquo;m <strong>Reynacho A. Radan</strong> — a passionate mobile app
+          developer and UI/UX designer based in Indonesia. I specialize in
+          crafting intuitive user interfaces backed by clean, scalable code.
         </motion.p>
 
         <motion.p
@@ -56,7 +53,9 @@ export default function About() {
           transition={{ delay: 0.3, duration: 0.6 }}
           className="text-gray-600 dark:text-gray-400 text-base leading-relaxed mb-4"
         >
-          My expertise in Android development and visual design allows me to bridge functionality with aesthetics, building digital experiences that are not just usable — but delightful.
+          My expertise in Android development and visual design allows me to
+          bridge functionality with aesthetics, building digital experiences
+          that are not just usable — but delightful.
         </motion.p>
 
         <motion.p
@@ -65,7 +64,9 @@ export default function About() {
           transition={{ delay: 0.4, duration: 0.6 }}
           className="text-gray-600 dark:text-gray-400 text-base leading-relaxed mb-6"
         >
-          I believe in continuous growth, collaborative work, and purposeful design. Whether it&#39;s designing from scratch or refining existing products, I aim to bring ideas to life with impact and clarity.
+          I believe in continuous growth, collaborative work, and purposeful
+          design. Whether it&#39;s designing from scratch or refining existing
+          products, I aim to bring ideas to life with impact and clarity.
         </motion.p>
 
         {/* SOCIAL ICONS */}
