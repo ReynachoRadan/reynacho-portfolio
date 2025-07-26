@@ -30,7 +30,7 @@ export default function Navbar() {
           <img
             src="/images/logo_navbar.png"
             alt="Logo"
-            className="w-10 h-10 object-contain"
+            className="w-10 h-10 object-contain transition-transform duration-300 ease-in-out hover:scale-110"
           />
         </Link>
 

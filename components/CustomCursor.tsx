@@ -18,7 +18,7 @@ export default function CustomCursor() {
   return (
     <motion.div
       className="fixed top-0 left-0 w-6 h-6 rounded-full z-[9999] pointer-events-none 
-                 bg-foreground/30 dark:bg-white/20 backdrop-blur-sm mix-blend-difference"
+                 bg-white mix-blend-difference"
       animate={{ x: position.x - 12, y: position.y - 12 }}
       transition={{
         type: "spring",

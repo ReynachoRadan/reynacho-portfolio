@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-// ✅ Import komponen global
+// ✅ Komponen global
 import Navbar from "@/components/Navbar";
 import CustomCursor from "@/components/CustomCursor";
 
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   description:
     "Personal portfolio of Reynacho A. Radan showcasing UI/UX projects, certifications, and mobile app development.",
   icons: {
-    icon: "/images/logo.png", // ✅ Ganti dengan favicon/logo kamu (32x32 atau 64x64 disarankan)
+    icon: "/favicon.png", // Pastikan favicon berada di public/favicon.png
   },
 };
 
@@ -36,11 +36,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* ✅ Komponen Global */}
         <CustomCursor />
         <Navbar />
-
-        {/* ✅ Konten Halaman */}
         {children}
       </body>
     </html>

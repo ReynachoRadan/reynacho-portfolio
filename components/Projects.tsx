@@ -79,7 +79,7 @@ export default function Projects() {
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <h2 className="text-4xl font-bold text-center sm:text-left text-foreground mb-4">
-        Portfolio
+        My Portfolio
       </h2>
 
       {/* Tabs */}
@@ -87,10 +87,10 @@ export default function Projects() {
         <button
           onClick={() => setActiveTab("projects")}
           className={clsx(
-            "px-4 py-2 rounded-full font-medium",
+            "px-4 py-2 rounded-full font-medium transition-all duration-300 shadow-sm",
             activeTab === "projects"
               ? "bg-black text-white dark:bg-white dark:text-black"
-              : "bg-gray-100 text-gray-600 dark:bg-[#222] dark:text-gray-400"
+              : "bg-gray-100 text-gray-600 dark:bg-[#222] dark:text-gray-400 hover:shadow-md hover:bg-gray-200/50 dark:hover:bg-[#333]/50"
           )}
         >
           Projects
@@ -98,10 +98,10 @@ export default function Projects() {
         <button
           onClick={() => setActiveTab("certifications")}
           className={clsx(
-            "px-4 py-2 rounded-full font-medium",
+            "px-4 py-2 rounded-full font-medium transition-all duration-300 shadow-sm",
             activeTab === "certifications"
               ? "bg-black text-white dark:bg-white dark:text-black"
-              : "bg-gray-100 text-gray-600 dark:bg-[#222] dark:text-gray-400"
+              : "bg-gray-100 text-gray-600 dark:bg-[#222] dark:text-gray-400 hover:shadow-md hover:bg-gray-200/50 dark:hover:bg-[#333]/50"
           )}
         >
           Certifications
