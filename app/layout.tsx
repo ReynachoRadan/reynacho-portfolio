@@ -4,7 +4,7 @@ import "./globals.css";
 
 // ✅ Import komponen global
 import Navbar from "@/components/Navbar";
-import CustomCursor from "@/components/CustomCursor"; // ⬅️ Tambahkan ini
+import CustomCursor from "@/components/CustomCursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,25 +17,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Reynacho Portfolio",
-  description: "Personal portfolio of Reynacho Azarel Radan",
+  title: "Reynacho A. Radan | UI/UX Enthusiast · Mobile Dev",
+  description:
+    "Personal portfolio of Reynacho A. Radan showcasing UI/UX projects, certifications, and mobile app development.",
+  icons: {
+    icon: "/images/logo.png", // ✅ Ganti dengan favicon/logo kamu (32x32 atau 64x64 disarankan)
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
+      <head />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* ✅ Global Components */}
-        <CustomCursor /> {/* ⬅️ Tambahkan di sini */}
+        {/* ✅ Komponen Global */}
+        <CustomCursor />
         <Navbar />
 
-        {/* ✅ Halaman utama */}
+        {/* ✅ Konten Halaman */}
         {children}
       </body>
     </html>
