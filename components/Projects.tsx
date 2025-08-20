@@ -50,9 +50,15 @@ const projects: Project[] = [
     image: "/images/projects/dapur-ibuk.png",
   },
   {
+    title: "Pipeline",
+    description: "Customer relationship management app with sales tracking, analytics, and team collaboration features.",
+    tech: ["Figma", "Entertainment UI", "Prototype"],
+    image: "/images/projects/pipeline.png",
+  },
+  {
     title: "Revela",
     description: "Movie streaming app with integrated chat feature and modern interface.",
-    tech: ["Figma", "Entertainment UI", "Prototype"],
+    tech: ["Figma", "CRM UI", "Prototype"],
     image: "/images/projects/revela.png",
     link: "https://www.figma.com/proto/rygMNpGVWGaTgf0cLUNkdc/Revela---Reynacho-A.-Radan?page-id=124%3A985&node-id=325-2226",
   },
