@@ -20,16 +20,16 @@ type Certification = {
 
 const projects: Project[] = [
   {
-    title: "Neo Cafe",
-    description: "Digital menu app for modern cafes. Designed using Figma as a high-fidelity UI project.",
-    tech: ["Figma", "UI/UX Design"],
-    image: "/images/projects/neo-cafe.png",
+    title: "Graphic Design",
+    description: "Here are a few of my graphic design creations. Built to stand out and make an impact.",
+    tech: ["adobe illustrator", "adobe photoshop", "Figma", "Graphic Design", "Branding", "social media"],
+    image: "/images/projects/Graphic design.png",
   },
   {
-    title: "Mivote",
-    description: "UI/UX concept for a digital voting app that prioritizes accessibility and security.",
-    tech: ["Figma", "Mobile UI Design"],
-    image: "/images/projects/mivote.png",
+    title: "NOIRÉA",
+    description: "A fashion recommendation app that allows users to upload photos.",
+    tech: ["Figma", "Mix & Match UI", "Prototype"],
+    image: "/images/projects/Noirea.png",
   },
   {
     title: "Sehati",
@@ -44,10 +44,22 @@ const projects: Project[] = [
     image: "/images/projects/selisir.png",
   },
   {
+    title: "Neo Cafe",
+    description: "Digital menu app for modern cafes. Designed using Figma as a high-fidelity UI project.",
+    tech: ["Figma", "UI/UX Design"],
+    image: "/images/projects/neo-cafe.png",
+  },
+  {
     title: "Dapur Ibuk",
     description: "Traditional food ordering app featuring clean visual menus and warm branding.",
     tech: ["Figma", "Restaurant UI"],
     image: "/images/projects/dapur-ibuk.png",
+  },
+  {
+    title: "Mivote",
+    description: "UI/UX concept for a digital voting app that prioritizes accessibility and security.",
+    tech: ["Figma", "Mobile UI Design"],
+    image: "/images/projects/mivote.png",
   },
   {
     title: "Pipeline",
@@ -65,6 +77,7 @@ const projects: Project[] = [
 ];
 
 const certifications: Certification[] = [
+  { title: "UI-UX Research & Design: Fullstack Intensive Bootcamp", issuer: "MySkill", year: "2025" },
   { title: "Junior Multimedia Designer", issuer: "DigiUp", year: "2024" },
   { title: "Mobile App Development", issuer: "SMK Telkom Malang", year: "2024" },
   { title: "Advanced Python", issuer: "Skillvul", year: "2024" },
