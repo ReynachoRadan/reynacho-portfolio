@@ -119,8 +119,7 @@ export default function Projects() {
       id="projects"
       className="max-w-5xl mx-auto py-24 px-6 flex flex-col gap-10"
       initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <h2 className="text-4xl font-bold text-center sm:text-left text-foreground mb-4">
