@@ -21,55 +21,71 @@ type Certification = {
 const projects: Project[] = [
   {
     title: "Graphic Design",
-    description: "Here are a few of my graphic design creations. Built to stand out and make an impact.",
-    tech: ["adobe illustrator", "adobe photoshop", "Figma", "Graphic Design", "Branding", "social media"],
+    description:
+      "Here are a few of my graphic design creations. Built to stand out and make an impact.",
+    tech: [
+      "adobe illustrator",
+      "adobe photoshop",
+      "Figma",
+      "Graphic Design",
+      "Branding",
+      "social media",
+    ],
     image: "/images/projects/Graphic design.png",
   },
   {
     title: "NOIRÉA",
-    description: "A fashion recommendation app that allows users to upload photos.",
+    description:
+      "A fashion recommendation app that allows users to upload photos.",
     tech: ["Figma", "Mix & Match UI", "Prototype"],
     image: "/images/projects/Noirea.png",
   },
   {
     title: "Sehati",
-    description: "Health monitoring app for children with clean and intuitive UI.",
+    description:
+      "Health monitoring app for children with clean and intuitive UI.",
     tech: ["Figma", "Health App UI"],
     image: "/images/projects/sehati.png",
   },
   {
     title: "Selisir",
-    description: "Travel app for recommending East Java beaches with map-based interface.",
+    description:
+      "Travel app for recommending East Java beaches with map-based interface.",
     tech: ["Figma", "Travel App"],
     image: "/images/projects/selisir.png",
   },
   {
     title: "Neo Cafe",
-    description: "Digital menu app for modern cafes. Designed using Figma as a high-fidelity UI project.",
+    description:
+      "Digital menu app for modern cafes. Designed using Figma as a high-fidelity UI project.",
     tech: ["Figma", "UI/UX Design"],
     image: "/images/projects/neo-cafe.png",
   },
   {
     title: "Dapur Ibuk",
-    description: "Traditional food ordering app featuring clean visual menus and warm branding.",
+    description:
+      "Traditional food ordering app featuring clean visual menus and warm branding.",
     tech: ["Figma", "Restaurant UI"],
     image: "/images/projects/dapur-ibuk.png",
   },
   {
     title: "Mivote",
-    description: "UI/UX concept for a digital voting app that prioritizes accessibility and security.",
+    description:
+      "UI/UX concept for a digital voting app that prioritizes accessibility and security.",
     tech: ["Figma", "Mobile UI Design"],
     image: "/images/projects/mivote.png",
   },
   {
     title: "Pipeline",
-    description: "Customer relationship management app with sales tracking, analytics, and team collaboration features.",
+    description:
+      "Customer relationship management app with sales tracking, analytics, and team collaboration features.",
     tech: ["Figma", "Entertainment UI", "Prototype"],
     image: "/images/projects/pipeline.png",
   },
   {
     title: "Revela",
-    description: "Movie streaming app with integrated chat feature and modern interface.",
+    description:
+      "Movie streaming app with integrated chat feature and modern interface.",
     tech: ["Figma", "CRM UI", "Prototype"],
     image: "/images/projects/revela.png",
     link: "https://www.figma.com/proto/rygMNpGVWGaTgf0cLUNkdc/Revela---Reynacho-A.-Radan?page-id=124%3A985&node-id=325-2226",
@@ -77,16 +93,26 @@ const projects: Project[] = [
 ];
 
 const certifications: Certification[] = [
-  { title: "UI-UX Research & Design: Fullstack Intensive Bootcamp", issuer: "MySkill", year: "2025" },
+  {
+    title: "UI-UX Research & Design: Fullstack Intensive Bootcamp",
+    issuer: "MySkill",
+    year: "2025",
+  },
   { title: "Junior Multimedia Designer", issuer: "DigiUp", year: "2024" },
-  { title: "Mobile App Development", issuer: "SMK Telkom Malang", year: "2024" },
+  {
+    title: "Mobile App Development",
+    issuer: "SMK Telkom Malang",
+    year: "2024",
+  },
   { title: "Advanced Python", issuer: "Skillvul", year: "2024" },
   { title: "React Basic", issuer: "Skillvul", year: "2024" },
   { title: "IT Specialist: JavaScript", issuer: "Certiport", year: "2023" },
 ];
 
 export default function Projects() {
-  const [activeTab, setActiveTab] = useState<"projects" | "certifications">("projects");
+  const [activeTab, setActiveTab] = useState<"projects" | "certifications">(
+    "projects",
+  );
 
   return (
     <motion.section
@@ -109,7 +135,7 @@ export default function Projects() {
             "px-4 py-2 rounded-full font-medium transition-all duration-300 shadow-sm",
             activeTab === "projects"
               ? "bg-black text-white dark:bg-white dark:text-black"
-              : "bg-gray-100 text-gray-600 dark:bg-[#222] dark:text-gray-400 hover:shadow-md hover:bg-gray-200/50 dark:hover:bg-[#333]/50"
+              : "bg-gray-100 text-gray-600 dark:bg-[#222] dark:text-gray-400 hover:shadow-md hover:bg-gray-200/50 dark:hover:bg-[#333]/50",
           )}
         >
           Projects
@@ -120,7 +146,7 @@ export default function Projects() {
             "px-4 py-2 rounded-full font-medium transition-all duration-300 shadow-sm",
             activeTab === "certifications"
               ? "bg-black text-white dark:bg-white dark:text-black"
-              : "bg-gray-100 text-gray-600 dark:bg-[#222] dark:text-gray-400 hover:shadow-md hover:bg-gray-200/50 dark:hover:bg-[#333]/50"
+              : "bg-gray-100 text-gray-600 dark:bg-[#222] dark:text-gray-400 hover:shadow-md hover:bg-gray-200/50 dark:hover:bg-[#333]/50",
           )}
         >
           Certifications
@@ -143,8 +169,7 @@ export default function Projects() {
                 key={index}
                 className="group block border border-gray-200 dark:border-gray-700 rounded-xl p-4 bg-white dark:bg-[#111] hover:shadow-xl hover:border-gray-300 dark:hover:border-gray-600 transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 {project.image && (
@@ -216,7 +241,10 @@ export default function Projects() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.2 }}
-                whileHover={{ scale: 1.03, boxShadow: "0px 8px 20px rgba(0,0,0,0.08)" }}
+                whileHover={{
+                  scale: 1.03,
+                  boxShadow: "0px 8px 20px rgba(0,0,0,0.08)",
+                }}
                 transition={{
                   type: "spring",
                   stiffness: 200,
