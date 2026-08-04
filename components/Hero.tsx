@@ -18,7 +18,7 @@ export default function Hero() {
         Android Dev · UI/UX Enthusiast · Tech Explorer
       </p>
       <a
-        href="/CV_ReynachoRadan.pdf"
+        href="/CV-ReynachoRadan.pdf"
         download
         className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-black text-white hover:bg-white hover:text-black border border-black dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white transition duration-300 font-semibold"
       >
