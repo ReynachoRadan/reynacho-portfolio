@@ -167,9 +167,20 @@ export default function Projects() {
               <motion.div
                 key={index}
                 className="group block border border-gray-200 dark:border-gray-700 rounded-xl p-4 bg-white dark:bg-[#111] hover:shadow-xl hover:border-gray-300 dark:hover:border-gray-600 transition-all duration-300"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                initial={{ opacity: 0, scale: 0.85, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                whileHover={{
+                  scale: 1.03,
+                  boxShadow: "0px 8px 20px rgba(0,0,0,0.08)",
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 260,
+                  damping: 20,
+                  mass: 0.6,
+                  delay: index * 0.05,
+                }}
               >
                 {project.image && (
                   <div className="w-full h-48 mb-4 overflow-hidden rounded-lg">
