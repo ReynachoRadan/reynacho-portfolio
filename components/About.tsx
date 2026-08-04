@@ -17,7 +17,7 @@ export default function About() {
       {/* FOTO */}
       <div className="relative w-40 h-40 sm:w-52 sm:h-52 rounded-lg overflow-hidden shadow-xl border border-gray-200 dark:border-gray-700 group transition-transform duration-700 ease-in-out transform hover:scale-105 hover:shadow-2xl">
         <Image
-          src="/reynacho.jpg"
+          src="/New-Reynacho.jpeg"
           alt="Reynacho A. Radan"
           fill
           className="object-cover grayscale group-hover:grayscale-0 transition duration-700 ease-in-out"
